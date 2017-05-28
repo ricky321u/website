@@ -1,0 +1,35 @@
+{
+  "presets": [ "react", "es2015" , "stage-0" ],
+  "plugins": [ "transform-decorators-legacy" , "transform-async-to-generator" ,
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime" 
+    }],
+    [ "module-resolver" ,
+
+      { "root": ["./common"], "alias": {
+            "test": "./test",
+            "underscore": "lodash"
+        }
+      },
+
+      { "root": ["./src"], "alias": {
+            "stylesheets": "./sass",
+            "images": "./images"
+        }
+      } ,
+
+      { "root": ["./server"], "alias": {
+            "test": "./testa",
+            "underscore": "lodash"
+        }
+      }
+
+    ]
+  ],
+  "ignore": [
+    "node_modules"
+  ]
+}

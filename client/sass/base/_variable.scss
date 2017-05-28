@@ -1,0 +1,26 @@
+$black: #000000;
+$white: #FFFFFF;
+$gray: #ACACAC;
+$pink: #F1768D;
+$light_gray: #9B9B9B;
+
+$nav_text_color: $white;
+$nav_hover_text_color: $black;
+
+$landing_bg_black: rgb(24,32,37);
+$landing_bg_white: $white;
+
+/* To-do: assign new class to extend */
+$font_weight_lato_exlight: 100;
+$font_weight_lato_light: 300;
+$font_weight_lato_normal: 400;
+$font_weight_lato_bold: 500;
+$font_weight_lato_bolder: 600;
+
+/* Admin icon */
+$nav_component_color: #CACACA;
+
+/* SVG background images with PNG and retina fallback */
+$image-path: '../images' !default;
+$fallback-extension: 'png' !default;
+$retina-suffix: '@2x';

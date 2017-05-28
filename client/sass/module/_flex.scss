@@ -1,0 +1,30 @@
+.flex-row {
+  @include display-flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  @include display-flex;
+  flex-direction: column;
+}
+
+.flex-item {
+  flex: 1;
+}
+.vertical-flex-item {
+  @include display-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and ( min-width: 480px ) {
+  .flex-row { flex-direction: column;}
+}
+
+@media all and ( min-width: 720px ) {
+  .flex-row { flex-direction: column;}
+}
+
+@media all and ( min-width: 960px ) {
+  .flex-row { flex-direction: row;}
+}

@@ -1,0 +1,809 @@
+html, body {
+  overflow-x: hidden;
+}
+.official-layout {
+  .container {
+    width: 100%;
+    max-width: 1024px;
+    position: relative;
+  }
+  .official-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 70px;
+    // border: 1px solid #000;
+    width: 80%;
+    @include animation( fadeIn 1.6s ease-in-out );
+
+    .icon-group {
+      display: flex;
+      -webkit-flex-flow: row wrap;
+
+      .icon {
+        margin: 0 7px;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        color: rgba( 255, 255, 255, 1 );
+        opacity: .3;
+        @include font-family-Loto( 100 , 20px );
+        @include transition-property( all );
+        @include transition-duration( 1s );
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .apple-icon {
+        background: transparent url( '../images/official-landing/icon-apple-download.png' ) no-repeat;
+        background-size: cover;
+        opacity: 1;
+      }
+      .android-icon {
+        background: transparent url( '../images/official-landing/icon-android-download.png' ) no-repeat;
+        background-size: cover;
+      }
+      .windows-icon {
+        background: transparent url( '../images/official-landing/icon-microsoft-download.png' ) no-repeat;
+        background-size: cover;
+      }
+    }
+    .link-group {
+      display: flex;
+      -webkit-flex-flow: row wrap;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        align-items: center;
+
+        a {
+          position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          display: block;
+          padding: 12px;
+          color: rgba( 255, 255, 255, .7 );
+          @include font-family-Loto( 200 , 15px );
+          letter-spacing: 3px;
+          cursor: pointer;
+          @include transition-property( all );
+          @include transition-duration( .5s );
+          &:hover {
+            color: rgba( 255, 255, 255, 1 );
+          }
+          &::after {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            content: '';
+            width: 0;
+            height: 1px;
+            background-color: white;
+            @include transition-property( all );
+            @include transition-duration( .5s );
+          }
+          &::before {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: '';
+            width: 0;
+            height: 1px;
+            background-color: white;
+            @include transition-property( all );
+            @include transition-duration( .5s );
+          }
+          &:hover::after {
+            width: 50%;
+          }
+          &:hover::before {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+  .section-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background: transparent url( '../images/official-landing/main-bg.png' ) no-repeat center center;
+    background-size: cover;
+
+    .logo {
+      display: flex;
+      margin: 0 auto;
+      width: 148px;
+      height: 95px;
+      background: transparent url( '../images/official-landing/logo.png' ) no-repeat;
+      background-size: contain;
+      @include animation( fadeInDown 1.2s ease-in-out );
+    }
+    .slogan {
+      display: flex;
+      margin: 36px auto;
+      opacity: .85;
+      @include transition-property( all );
+      @include transition-duration( 1s );
+      @include animation( fadeInUp 1.5s ease-in-out );
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .video-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      .left-line {
+        display: flex;
+        justify-content: flex-start;
+        height: 1px;
+        width: 200px;
+        background-color: rgba( 255, 255, 255, .4 );
+        @include animation( fadeInLeft 1.2s ease-in-out );
+      }
+      .right-line {
+        display: flex;
+        justify-content: flex-end;
+        height: 1px;
+        width: 200px;
+        background-color: rgba( 255, 255, 255, .4 );
+        @include animation( fadeInRight 1.2s ease-in-out );
+      }
+      .play-button {
+        display: flex;
+        width: 46px;
+        height: 46px;
+        margin: 0 40px;
+        background: transparent url( '../images/official-landing/icon-play.png' ) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        opacity: .6;
+        @include transition-property( all );
+        @include transition-duration( 1s );
+        @include animation( rotateIn 1.2s ease-in-out );
+        &:hover {
+          opacity: 1;
+          @include animation( pulse 2s ease-in-out );
+        }
+      }
+    }
+    .link-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      color: white;
+      @include font-family-Loto( 200 , 13px );
+      letter-spacing: 1px;
+      @include animation( flipInX 1.5s ease-in-out );
+
+      .order-button {
+        width: 166px;
+        height: 44px;
+        margin: 0 auto;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        text-align: center;
+        color: rgba( 255, 255, 255, 1 );
+        @include font-family-Loto( 300 , 15px );
+        background: transparent url( '../images/official-landing/blur-button-bg-left.png' ) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        opacity: .9;
+        @include transition-property( all );
+        @include transition-duration( .8s );
+        &:hover {
+          opacity: 1;
+          @include animation( pulse 1.5s ease-in-out );
+        }
+      }
+      .find-button {
+        width: 166px;
+        height: 44px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        text-align: center;
+        color: rgba( 255, 255, 255, 1 );
+        @include font-family-Loto( 300 , 15px );
+        background: transparent url( '../images/official-landing/blur-button-bg-right.png' ) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        opacity: .8;
+        @include transition-property( all );
+        @include transition-duration( .8s );
+        &:hover {
+          opacity: 1;
+          @include animation( pulse 1.5s ease-in-out );
+        }
+      }
+    }
+  }
+  .section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .section-sweet {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: -70px auto 60px auto;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background: transparent url( '../images/official-landing/curve-bg.png' ) no-repeat center;
+    background-size: cover;
+
+    h1 {
+      color: #F16E86;
+      @include font-family-Loto( 300 , 45px );
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    h3 {
+      margin: 12px auto 0px auto;
+      color: #F16E86;
+      @include font-family-Loto( 400 , 20px );
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .row-wrapper {
+      display: flex;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      margin-bottom: 40px;
+      .cols {
+        width: 25%;
+        text-align: center;
+        .icon-area {
+          height: 52px;
+          img {
+            &.mail {
+              width: 80px;
+              height: auto;
+            }
+            &.arrow {
+              width: 78px;
+              height: auto;
+            }
+            &.chat {
+              width: 90px;
+              height: auto;
+            }
+            &.birds {
+              width: 120px;
+              height: auto;
+            }
+          }
+        }
+        h2 {
+          margin-top: 45px;
+          margin-bottom: 20px;
+          font-size: 15pt;
+          color: $pink;
+          font-weight: 500;
+          letter-spacing: 3px;
+        }
+        p {
+          width: 85%;
+          margin: 0 auto;
+          font-size: 12pt;
+          line-height: 28px;
+          letter-spacing: 1px;
+          color: $light_gray;
+          font-weight: $font_weight_lato_light;
+        }
+      }
+    }
+
+    .download-link {
+      display: block;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16pt;
+      letter-spacing: 3px;
+      color: $pink;
+    }
+
+    .content-group {
+      margin-top: 50px;
+      margin-right: 40px;
+      width: 50%;
+      .desc {
+        color: #9B9B9B;
+        @include font-family-Loto( 300 , 16px );
+        line-height: 28px;
+        letter-spacing: 1px;
+
+        .download-button {
+          display: flex;
+          flex-direction: row;
+          width: 230px;
+          height: 44px;
+          background-color: white;
+          border-radius: 50px;
+          margin-top: 25px;
+          padding-top: 8px;
+          padding-bottom: 10px;
+          color: #F16E86;
+          @include font-family-Loto( 300 , 20px );
+          letter-spacing: 1px;
+
+          .apple-download {
+            width: 46px;
+            height: 46px;
+            margin-left: 14px;
+            margin-top: -9px;
+            background: transparent url( '../images/official-landing/icon-apple-pink.png' ) no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            &:hover {
+              @include animation( swing 1.2s ease-in-out );
+            }
+          }
+          .android-download {
+            width: 46px;
+            height: 46px;
+            margin-left: 0px;
+            margin-top: -9px;
+            background: transparent url( '../images/official-landing/icon-android-pink.png' ) no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            &:hover {
+              @include animation( swing 1.2s ease-in-out );
+            }
+          }
+        }
+      }
+    }
+    // .ui-demo {
+    //   display: flex;
+    //   width: 488px;
+    //   height: 486px;
+    //   background: transparent url( '../images/official-landing/sweet-ui-demo-complete.png' ) no-repeat;
+    //   background-size: contain;
+    // }
+  }
+  .section-taste {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: -70px auto 0 auto;
+    padding-top: 140px;
+    padding-bottom: 110px;
+    background: white url( '../images/official-landing/curve-bg-with-city.png' ) no-repeat;
+    background-size: cover;
+
+    h1 {
+      color: white;
+      @include font-family-Loto( 300 , 40px );
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    h3 {
+      color: white;
+      @include font-family-Loto( 400 , 20px );
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .content-group {
+      margin-top: 50px;
+      margin-right: 40px;
+      width: 50%;
+      .desc {
+        color: white;
+        @include font-family-Loto( 300 , 16px );
+        line-height: 28px;
+        letter-spacing: 1px;
+
+        .download-button {
+          display: flex;
+          flex-direction: row;
+          width: 230px;
+          height: 44px;
+          background-color: #F16E86;
+          border-radius: 50px;
+          margin-top: 25px;
+          padding-left: 0px;
+          padding-top: 8px;
+          padding-bottom: 10px;
+          color: white;
+          @include font-family-Loto( 300 , 20px );
+          letter-spacing: 1px;
+
+          &.link {
+            padding-left: 25px;
+            background-color: white;
+            color: #F16E86;
+          }
+          &.under {
+            margin-top: 12px;
+          }
+          .apple-download {
+            width: 46px;
+            height: 46px;
+            margin-left: 14px;
+            margin-top: -9px;
+            background: transparent url( '../images/official-landing/icon-apple-white.png' ) no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            &:hover {
+              @include animation( swing 1.2s ease-in-out );
+            }
+          }
+          .android-download {
+            width: 46px;
+            height: 46px;
+            margin-left: 0px;
+            margin-top: -9px;
+            background: transparent url( '../images/official-landing/icon-android-white.png' ) no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            &:hover {
+              @include animation( swing 1.2s ease-in-out );
+            }
+          }
+        }
+      }
+    }
+    .ui-demo {
+      display: flex;
+      width: 465px;
+      height: 486px;
+      background: transparent url( '../images/official-landing/taste-ui-demo.png' ) no-repeat;
+      background-size: contain;
+    }
+  }
+  .section-packer {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    position: relative;
+    width: 100%;
+    margin: -70px auto 0 auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    background: white url( '../images/official-landing/curve-bg-pink.png' ) no-repeat;
+    background-size: cover;
+    z-index: 1;
+
+    h1 {
+      color: white;
+      @include font-family-Loto( 300 , 40px );
+      letter-spacing: 2px;
+      text-align: center;
+    }
+    h3 {
+      margin: 12px auto 0px auto;
+      color: white;
+      @include font-family-Loto( 400 , 20px );
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .bird-connection {
+      text-align: center;
+      background: transparent url( '../images/official-landing/bird-bridge.png' ) no-repeat center center;
+      background-size: contain;
+    }
+    .section-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      .content-group {
+        .desc {
+          color: white;
+          @include font-family-Loto( 300 , 16px );
+          line-height: 28px;
+          letter-spacing: 1px;
+
+          .download-button {
+            display: flex;
+            flex-direction: row;
+            width: 120px;
+            height: 44px;
+            background-color: $pink;
+            border: 1px solid white;
+            border-radius: 50px;
+            margin-top: 25px;
+            padding-top: 5px;
+            color: white;
+            @include font-family-Loto( 300 , 20px );
+            letter-spacing: 1px;
+
+            &.link {
+              padding-left: 30px;
+              background-color: #F16E86;
+              color: white;
+            }
+            .apple-download {
+              width: 46px;
+              height: 46px;
+              margin-left: 14px;
+              margin-top: -9px;
+              background: transparent url( '../images/official-landing/icon-apple-white.png' ) no-repeat;
+              background-size: contain;
+              cursor: pointer;
+              &:hover {
+                @include animation( swing 1.2s ease-in-out );
+              }
+            }
+            .android-download {
+              width: 46px;
+              height: 46px;
+              margin-left: 0px;
+              margin-top: -9px;
+              background: transparent url( '../images/official-landing/icon-android-white.png' ) no-repeat;
+              background-size: contain;
+              cursor: pointer;
+              &:hover {
+                @include animation( swing 1.2s ease-in-out );
+              }
+            }
+          }
+        }
+      }
+      .ui-demo {
+        display: flex;
+        position: relative;
+        background: transparent url( '../images/official-landing/sweet-ui-demo.png' ) no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  .city-gray {
+    margin-top: 60px;
+    width: 100%;
+    height: 120px;
+    background: transparent url( '../images/official-landing/cities-gray.png' ) no-repeat;
+    background-size: cover;
+  }
+  .official-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: transparent url( '../images/official-landing/cities-gray.png' ) no-repeat center center;
+    background-size: cover;
+    z-index: 9;
+
+    h4 {
+      margin-bottom: 25px;
+      color: #B2B2B2;
+      @include font-family-Loto( 400 , 22px );
+      letter-spacing: 1.5px;
+      line-height: 34px;
+      opacity: .5;
+    }
+    h3 {
+      margin-top: 16px;
+      margin-bottom: 40px;
+      color: rgba( 255, 255, 255, 1 );
+      @include font-family-Loto( 200 , 32px );
+      letter-spacing: 2px;
+    }
+    h2 {
+      color: rgba( 255, 255, 255, 1 );
+      margin-bottom: 38px;
+      @include font-family-Loto( 300 , 32px );
+      letter-spacing: 1px;
+      .emphasize {
+        color: rgba( 255, 255, 255, .5 );
+        font-weight: 400;
+      }
+    }
+    .icon-pin {
+      display: flex;
+      margin-bottom: 12px;
+      img {
+        width: auto;
+        height: 19px;
+        margin: 0 auto;
+        opacity: .3;
+      }
+    }
+    .city-wrapper {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      color: white;
+      margin: 0 auto 20px auto;
+      .city-row {
+        display: flex;
+        flex-flow: column;
+        text-align: left;
+        h5 {
+          color: $pink;
+          letter-spacing: 1px;
+          @include font-family-Loto( 200 , 14px );
+        }
+        ul {
+          padding-left: 0px;
+        }
+        li {
+          list-style: none;
+          letter-spacing: 1px;
+          margin-bottom: 8px;
+          @include font-family-Loto( 300 , 18px );
+        }
+        .separator {
+          width: 16px;
+          height: 1px;
+          margin-top: 15px;
+          margin-bottom: 16px;
+          background-color: rgba( 255, 255, 255, .3 );
+        }
+      }
+    }
+    .footer-align-wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      h3 {
+        width: 100%;
+        color: rgba( 255, 255, 255, .6 );
+      }
+      .download-group {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      .social-group {
+        display: flex;
+        flex-flow: row wrap;
+      }
+      .submit-form-group {
+        position: relative;
+        input {
+          align-items: center;
+          margin: 0 75px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 22px;
+          background-color: #fff;
+          border-radius: 50px;
+          letter-spacing: 2px;
+          color: rgba(117, 117, 117, 1.000);
+          &:focus {
+            outline: none;
+          }
+        }
+        .arrow {
+          position: absolute;
+          top: 14px;
+          right: 85px;
+          width: 35px;
+          height: 35px;
+          background: transparent url( '../images/official-landing/icon-arrow.png' ) no-repeat;
+          background-size: cover;
+          cursor: pointer;
+          @include transition-property( all );
+          @include transition-duration( 0.8s );
+          &:hover {
+            -ms-transform: rotate( 180deg ); /* IE 9 */
+            -webkit-transform: rotate( 180deg ); /* Chrome, Safari, Opera */
+            transform: rotate( 180deg );
+          }
+        }
+      }
+      .icon {
+        margin: 0 5px;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        color: rgba( 255, 255, 255, 1 );
+        opacity: .3;
+        @include font-family-Loto( 100 , 20px );
+        @include transition-property( all );
+        @include transition-duration( 1s );
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .apple-icon {
+        background: transparent url( '../images/official-landing/icon-apple-download.png' ) no-repeat;
+        background-size: cover;
+      }
+      .android-icon {
+        background: transparent url( '../images/official-landing/icon-android-download.png' ) no-repeat;
+        background-size: cover;
+      }
+      .windows-icon {
+        background: transparent url( '../images/official-landing/icon-microsoft-download.png' ) no-repeat;
+        background-size: cover;
+      }
+      .giftpack-icon {
+        background: transparent url( '../images/official-landing/icon-giftpack.png' ) no-repeat;
+        background-size: cover;
+      }
+      .facebook-icon {
+        padding: 7px 15px;
+        border: 1px solid rgba( 255, 255, 255, .8 );
+        border-radius: 50px;
+      }
+      .twitter-icon {
+        padding: 7px 13px;
+        border: 1px solid rgba( 255, 255, 255, .8 );
+        border-radius: 50px;
+      }
+      .instagram-icon {
+        padding: 7px 13px;
+        border: 1px solid rgba( 255, 255, 255, .8 );
+        border-radius: 50px;
+      }
+      .vimeo-icon {
+        padding: 7px 11px;
+        border: 1px solid rgba( 255, 255, 255, .8 );
+        border-radius: 50px;
+      }
+    }
+  }
+  .footer-bot {
+    position: relative;
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    margin-top: -10px;
+    margin-bottom: -162px;
+    text-align: center;
+    background-color: #323237;
+    color: #757575;
+
+    h4 {
+      @include font-family-Loto( 300 , 13px );
+      letter-spacing: 1px;
+    }
+    .language-button {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      width: 100px;
+      background-color: #3C3D42;
+      border-radius: 5px;
+      padding: 8px 10px 8px 12px;
+
+      select {
+        display: flex;
+        margin: 0 auto;
+        background-color: transparent;
+        color: white;
+        -webkit-appearance:none;
+        border: none;
+        @include font-family-Loto( 200 , 12px );
+        letter-spacing: 2px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .language-icon {
+        // display: flex;
+        display: none;
+        width: 20px;
+        height: 18px;
+        padding-right: 25px;
+        background: transparent url( '../images/official-landing/icon-language.png' ) no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}

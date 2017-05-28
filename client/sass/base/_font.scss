@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello/fontello.eot?45861265');
+  src: url('/fonts/fontello/fontello.eot?45861265#iefix') format('embedded-opentype'),
+       url('/fonts/fontello/fontello.woff?45861265') format('woff'),
+       url('/fonts/fontello/fontello.ttf?45861265') format('truetype'),
+       url('/fonts/fontello/fontello.svg?45861265#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin font-icon-fontello( $weight , $size ){
+  font-family: "fontello";
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin font-family-Loto( $weight , $size ){
+  font-family: 'Lato', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+}
